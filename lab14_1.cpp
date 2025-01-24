@@ -1,9 +1,27 @@
 #include <iostream>
 using namespace std;
 
+template<typename T>
+void swap(T d[], int x, int y){
+	T temp = d[x];
+	d[x] = d[y];
+	d[y] = temp;
+}
+
 template <typename T>
 void insertionSort(T d[],int N){
-
+	for(int i=1; i<N; i++){
+	for(int j=i; j>0; j--){
+		if(d[j] > d[j-1]){
+		swap(d,j,j-1);
+		}
+	}
+	cout << "pass " << i << ":";
+		for(int k =0 ; k< N ; k++){
+			cout << d[k] << " "; 
+		}
+		cout << endl ;
+	}
 }
 
 int main(){
